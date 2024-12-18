@@ -4,14 +4,18 @@
 # следования цифр на обратный для каждого из пяти данных целых чисел.
 
 def InvertDigits(K):
-    K = str(K)
-    inverted = ''
-    for digit in K:
-        inverted = digit + inverted
-    K = int(inverted)
-    return K
+    reversed_number = 0
+    while K > 0:
+        last_digit = K % 10  # Извлекаем последнюю цифру
+        reversed_number = reversed_number * 10 + last_digit  # Добавляем её к новому числу
+        K = K // 10  # Удаляем последнюю цифру из K
+    return reversed_number
 
-numbers = [12345, 67890, 13579, 24680, 98765]
-inverted_numbers = [InvertDigits(num) for num in numbers]
+# Пример использования функции для пяти данных целых чисел
+numbers = [12345, 67890, 121314, 987654321, 1010101]
+reversed_numbers = [InvertDigits(num) for num in numbers]
 
-print(inverted_numbers)
+# Вывод результатов
+for original, reversed in zip(numbers, reversed_numbers):
+    print(f"Оригинальное число: {original}, Обратное число: {reversed}")
+
