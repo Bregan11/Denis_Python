@@ -17,5 +17,5 @@ reversed_numbers = [InvertDigits(num) for num in numbers]
 
 # Вывод результатов
 for original, reversed in zip(numbers, reversed_numbers):
-    print(f"Оригинальное число: {original}, Обратное число: {reversed}")
+    print(f"Оригинальное число: {original}\nОбратное число: {reversed}\n\n")
 
