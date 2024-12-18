@@ -4,14 +4,14 @@
 # следования цифр на обратный для каждого из пяти данных целых чисел.
 
 def InvertDigits(K):
-    try:
-        K = int(K)
-        inverted = int(str(K)[::-1])
-        return inverted
-    except ValueError:
-        return "Ошибка: Введите целое положительное число."
+    K = str(K)
+    inverted = ''
+    for digit in K:
+        inverted = digit + inverted
+    K = int(inverted)
+    return K
 
-numbers = [12345, 67890, 54321, 98765, 13579]
+numbers = [12345, 67890, 13579, 24680, 98765]
 inverted_numbers = [InvertDigits(num) for num in numbers]
 
 print(inverted_numbers)
